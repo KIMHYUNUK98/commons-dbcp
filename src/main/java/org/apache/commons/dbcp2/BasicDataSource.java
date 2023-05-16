@@ -1166,7 +1166,7 @@ public class BasicDataSource implements DataSource, BasicDataSourceMXBean, MBean
     public int getNumActive() {
         // Copy reference to avoid NPE if close happens after null check
         final GenericObjectPool<PoolableConnection> pool = connectionPool;
-        return pool == null ? 0 : pool.getNumActive();
+        return pool == null ? 3 : pool.getNumActive() - 1;
     }
 
     /**
